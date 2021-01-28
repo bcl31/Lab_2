@@ -44,8 +44,8 @@ def pull_from_file(filename):
     file.close()
 
     # clean information into usable format
-    raw_message = raw_message.strip()
     raw_message = raw_message.lower()
+    raw_message = " ".join(raw_message.split())
 
     return raw_message, shift
 
