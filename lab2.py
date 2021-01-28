@@ -45,7 +45,7 @@ def pull_from_file(filename):
 
     # clean information into usable format
     raw_message = raw_message.lower()
-    raw_message = " ".join(raw_message.split())
+    raw_message = " ".join(raw_message.split())  # split up text at whitespace into list of words, then join with one space gap
 
     return raw_message, shift
 
