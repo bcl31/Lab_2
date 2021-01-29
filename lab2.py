@@ -19,9 +19,12 @@ def main():
     print(decrypted_message)
 
 
-# prompts the user to input the name of the file they wish to be decrypted, if the file is not a valid .txt format, notifies the user and asks them
-# again
 def get_input_file():
+    """
+    prompts the user to input the name of the file they wish to be decrypted, if the file is not a valid .txt format,
+    notifies the user and asks them again.
+    :return: String containing filename
+    """
     # ask the user for filename
     filename = input("Please enter the full name of the text file: ")
 
@@ -32,11 +35,14 @@ def get_input_file():
     return filename
 
 
-# filename is a string containing the full name of the file information is to be pulled from
-
-# opens the file specified in filename, finds the decryption key and message, cleans leading and trailing whitespace from the message, then returns
-# both the message and the key in message, key format
 def pull_from_file(filename):
+    """
+    opens the file specified in filename, finds the decryption key and message, cleans leading and trailing whitespace from the message, then returns
+    both the message and the key in message, key format
+
+    :param filename: a string containing the full name of the file information is to be pulled from
+    :return: string containing raw message, int containing shift key
+    """
     # pull information from file
     file = open(filename, "r")
     shift = int(file.readline())
@@ -50,11 +56,14 @@ def pull_from_file(filename):
     return raw_message, shift
 
 
-# encrypted is a string containing an encrypted message
-# key is an int indicating the amount of shift each letter needs to be moved by in order to decrypt the message
-
-# decrypts the message found in encrypted by shifting every letter in the message key entries backwards in the alphabet.
 def decrypt(encrypted, key):
+    """
+    decrypts the message found in encrypted by shifting every letter in the message key entries backwards in the alphabet.
+
+    :param encrypted: string containing an encrypted message
+    :param key: int indicating the amount of shift each letter needs to be moved by in order to decrypt the message
+    :return: string containing decrypted message
+    """
     # establish alphabet for reference and an empty  lkist to store the progress on the decrypted message
     alphabet = "abcdefghijklmnopqrstuvwxyz"
     decrypted = []
