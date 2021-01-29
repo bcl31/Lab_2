@@ -64,7 +64,7 @@ def decrypt(encrypted, key):
     :param key: int indicating the amount of shift each letter needs to be moved by in order to decrypt the message
     :return: string containing decrypted message
     """
-    # establish alphabet for reference and an empty  lkist to store the progress on the decrypted message
+    # establish alphabet for reference and an empty  list to store the progress on the decrypted message
     alphabet = "abcdefghijklmnopqrstuvwxyz"
     decrypted = []
 
